@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeCast Demo</title>
+  <script src="//www.gstatic.com/cv/js/sender/v1/cast_sender.js?loadCastFramework=1"></script>
+  <style>
+    body {
+      background: black;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    google-cast-launcher {
+      height: 2.5rem;
+      width: 2.5rem;
+      margin: 1rem;
+      position: absolute;
+      right: 0;
+      z-index: 1;
+    }
+    .codeWrapper {
+      height: 60%;
+      margin: 0 auto 1rem auto;
+      position: relative;
+    }
+    .code {
+      height: 100%;
+      padding: 1rem;
+      border: solid 1px #404040;
+      box-sizing: border-box;
+    }
+    .codeWrapper, .logs {
+      max-width: 1500px;
+    }
+    .codeWrapper, .code, .logs {
+      width: 100%;
+      font-size: 16px;
+      background: #202020;
+      color: #ddd;
+      resize: none;
+    }
+    .code:focus, .logs:focus {
+      outline: none;
+    }
+    .logs {
+      height: 40%;
+      margin: auto;
+      border: solid 1px #404040;
+      box-sizing: border-box;
+    }
+    .logs > option {
+      padding: 1rem;
+      color: #ddd;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .code, .logs {
+      scrollbar-width: none;
+    }
+    .code::-webkit-scrollbar, .logs::-webkit-scrollbar {
+      width: 0px;
+    }
+  </style>
+</head>
+<body>
+  <div class="codeWrapper">
+    <google-cast-launcher></google-cast-launcher>
+    <textarea class="code" spellcheck="false"></textarea>
+  </div>
+  <select name="logs" class="logs" multiple></select>
+</body>
+</html>
