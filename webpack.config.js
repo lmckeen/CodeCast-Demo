@@ -5,9 +5,10 @@ const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
 module.exports = {
   mode: 'development',
   devServer: {
+    open: true,
     inline: false,
-    host: '0.0.0.0',
     watchContentBase: true,
+    openPage: 'sender.html',
     writeToDisk: (filePath) => {
       return !/hot-update/.test(filePath);
     }

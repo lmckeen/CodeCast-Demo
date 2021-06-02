@@ -1,7 +1,7 @@
 import { CodeCast } from 'codecast/sender'
 
 window['__onGCastApiAvailable'] = function(isAvailable) {
-  if (isAvailable && cast) {
+  if (isAvailable && window.cast) {
     cast.framework.CastContext.getInstance().setOptions({
       receiverApplicationId: '8FD9262C',
       autoJoinPolicy: chrome.cast.AutoJoinPolicy.ORIGIN_SCOPED
